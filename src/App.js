@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from "react"
+import {Box,Stack} from "@chakra-ui/react"
+import Navbar from "./components/Navbar.tsx"
+import { GymList } from './components/GymList';
+import { Searchbar } from './components/Searchbar';
 
 function App() {
+  const [inputVal, setInputVal] = useState("")
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Stack bg="black" color="white">
+      <Navbar/>
+      <Searchbar inputVal={inputVal} setInputVal={setInputVal}/>
+      <GymList gymName={inputVal}/>
+    </Stack>
   );
 }
 
