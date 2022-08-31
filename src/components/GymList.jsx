@@ -4,8 +4,7 @@ import { BiSearch } from "react-icons/bi";
 import axios from "axios"
 import { Gym } from './Gym';
 
-export const GymList = ({gymName}) => {
-
+export const GymList = ({gymName,geoLocation}) => {
   const [locationName, setLocationName] = useState("")
   const [min, setMin] = useState("")
   const [max, setMax] = useState("")
@@ -15,7 +14,7 @@ export const GymList = ({gymName}) => {
 
   // Fetch request for Nearest Gym
   useEffect(() => {
-    axios.get(`https://devapi.wtfup.me/gym/nearestgym?lat=30.325488815850512&long=78.0042384802231`)
+    axios.get(`https://devapi.wtfup.me/gym/nearestgym?lat=${geoLocation.lat}&long=${geoLocation.long}`)
     .then((res)=>setGymData(res.data.data))
   }, [])
 
@@ -43,8 +42,8 @@ export const GymList = ({gymName}) => {
   
   return (
     <>
-    <Flex direction={["column","column","row","row"]}>
-      <Box w={["100%","100%","30%","30%"]} p="1rem">
+    <Flex direction={["column","column","row","row"]} px="2rem" gap="2rem">
+      <Box w={["100%","100%","30%","30%"]}>
         <Flex justify="space-between">
           <Heading as="h3" size="xl" fontWeight="400" my="1rem">Filters</Heading>
           {(locationName || min || max) && <Button m="auto 0" bg="#920909" onClick={handleReset}>reset</Button>}

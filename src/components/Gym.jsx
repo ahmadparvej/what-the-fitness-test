@@ -19,7 +19,7 @@ export const Gym = ({data}) => {
             <Flex w={["90%","90%","50%","50%"]} direction={["row","row","column","column",]} gap="1rem" justifyContent={["left","left","space-between","space-between"]}>
                 <Box>
                     <Heading as="h1" size="md">{slug}</Heading>
-                    <Heading as="h1" size="md" fontWeight="400">{address1+" "+address2+" "+city}</Heading>
+                    <Heading as="h1" size="sm" fontWeight="400">{address1+" "+address2+" "+city}</Heading>
                 </Box>
                 <Box>
                     <Flex>

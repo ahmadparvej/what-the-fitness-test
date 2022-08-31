@@ -1,17 +1,21 @@
-import {useState} from "react"
-import {Box,Stack} from "@chakra-ui/react"
+import { useState, useEffect} from "react"
+import { Box } from "@chakra-ui/react"
 import Navbar from "./components/Navbar.tsx"
-import { GymList } from './components/GymList';
-import { Searchbar } from './components/Searchbar';
+import { Routes, Route } from "react-router-dom"
+import { GymPage } from './components/GymPage';
+import Footer from './components/Footer.tsx';
 
 function App() {
   const [inputVal, setInputVal] = useState("")
   return (
-    <Stack bg="black" color="white">
+    <Box bg="black" color="white" m="0" p="0">
       <Navbar/>
-      <Searchbar inputVal={inputVal} setInputVal={setInputVal}/>
-      <GymList gymName={inputVal}/>
-    </Stack>
+      <Routes>
+        <Route path="/" element={<GymPage/>} />
+        <Route path="/gym" element={<GymPage/>} />
+      </Routes>
+      <Footer/>
+    </Box>
   );
 }
 
