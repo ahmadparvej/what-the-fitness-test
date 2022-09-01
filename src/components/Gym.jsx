@@ -36,7 +36,7 @@ export const Gym = ({data}) => {
         </Flex>
         <Flex p="2rem 0" justifyContent="space-between" alignContent="center">
             <Heading p="0" m="0" line-height="32px" size="md" fontWeight="100" color="gold">{"₹ 3600 for 3 Months"}</Heading>
-            <Button bg="#920909" size="lg">Book Now</Button>
+            <Button colorScheme='red' variant='solid'>Book Now</Button>
         </Flex>
       </Stack>
   )

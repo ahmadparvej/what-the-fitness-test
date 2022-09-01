@@ -20,7 +20,7 @@ export const Searchbar = ({inputVal,setInputVal}) => {
         onChange={(e)=>setInputVal(e.target.value)}
       />
       <InputRightElement width='4.5rem' position="none">
-        <Button size='sm' onClick={handleClick} bg="#920909">
+        <Button colorScheme='red' variant='solid' size='sm' onClick={handleClick}>
           Clear
         </Button>
       </InputRightElement>
